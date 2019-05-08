@@ -58,6 +58,8 @@ int Josephus::kill(){
     int i=0;
     while(noOfPeople>1){
         moving=sequence[i++];
+        if(moving>noOfPeople && moving%noOfPeople==0)moving=noOfPeople;
+        else if(moving>noOfPeople)moving=moving%noOfPeople;
         while(moving>0){
             temp=cur;
             while(cur->next->number==9999){
